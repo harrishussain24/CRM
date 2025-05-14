@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 Widget textFieldLabel({required String label}) {
   return Align(
@@ -60,16 +59,12 @@ Widget elevatedButtons({
   );
 }
 
-Widget showAccountButton({required IconData icon, required String text}) {
+Widget showAccountButton({required Widget icon, required String text}) {
   return Column(
     children: [
       IconButton(
         onPressed: () {},
-        icon: FaIcon(
-          icon,
-          color: Colors.black,
-          size: 30,
-        ),
+        icon: icon,
         style: OutlinedButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12.0),

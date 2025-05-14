@@ -1,7 +1,6 @@
 import 'package:crm/authentication/forgotpassword.dart';
 import 'package:crm/authentication/signUp.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'constants.dart';
 
@@ -120,25 +119,40 @@ class _SignInScreenState extends State<SignInScreen> {
 
               const SizedBox(height: 24),
 
-              // Google Button
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  // Google Button
                   showAccountButton(
-                    icon: FontAwesomeIcons.google,
+                    icon: Image.asset(
+                      "assets/google.png",
+                      width: 40,
+                      height: 40,
+                      fit: BoxFit.cover,
+                    ),
                     text: "Google",
                   ),
                   const SizedBox(width: 30),
 
                   // Facebook Button
                   showAccountButton(
-                    icon: FontAwesomeIcons.facebook,
+                    icon: Image.asset(
+                      'assets/facebook.png',
+                      width: 40,
+                      height: 40,
+                      fit: BoxFit.cover,
+                    ),
                     text: "Facebook",
                   ),
                   const SizedBox(width: 30),
                   // Twitter Button
                   showAccountButton(
-                    icon: FontAwesomeIcons.xTwitter,
+                    icon: Image.asset(
+                      'assets/twitter.jpg',
+                      width: 40,
+                      height: 40,
+                      fit: BoxFit.cover,
+                    ),
                     text: "Twitter",
                   ),
                 ],

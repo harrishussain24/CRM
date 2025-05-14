@@ -103,31 +103,44 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
 
                 const SizedBox(height: 24),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    // Google Button
                     showAccountButton(
-                      icon: FontAwesomeIcons.google,
+                      icon: Image.asset(
+                        "assets/google.png",
+                        width: 40,
+                        height: 40,
+                        fit: BoxFit.cover,
+                      ),
                       text: "Google",
                     ),
                     const SizedBox(width: 30),
 
                     // Facebook Button
                     showAccountButton(
-                      icon: FontAwesomeIcons.facebook,
+                      icon: Image.asset(
+                        'assets/facebook.png',
+                        width: 40,
+                        height: 40,
+                        fit: BoxFit.cover,
+                      ),
                       text: "Facebook",
                     ),
                     const SizedBox(width: 30),
-
                     // Twitter Button
                     showAccountButton(
-                      icon: FontAwesomeIcons.xTwitter,
+                      icon: Image.asset(
+                        'assets/twitter.jpg',
+                        width: 40,
+                        height: 40,
+                        fit: BoxFit.cover,
+                      ),
                       text: "Twitter",
                     ),
                   ],
                 ),
-
                 const SizedBox(height: 24),
               ],
             ),
