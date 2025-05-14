@@ -58,7 +58,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 children: [
                   TextButton(
                     onPressed: () {
-                      showResetPasswordBottomSheet(context);
+                      showForgotPasswordBottomSheet(context);
                     },
                     child: Text(
                       "Forgot Password...?",
