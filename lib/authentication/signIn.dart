@@ -76,7 +76,7 @@ class _SignInScreenState extends State<SignInScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Don't have an account? ",
+                  const Text("Don't have an account...? ",
                       style: TextStyle(color: Colors.grey)),
                   TextButton(
                     onPressed: () {
@@ -105,7 +105,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                   ),
                   const Text(
-                    'or',
+                    'or continue with',
                     style: TextStyle(color: Colors.black54),
                   ),
                   const Expanded(
@@ -121,62 +121,31 @@ class _SignInScreenState extends State<SignInScreen> {
               const SizedBox(height: 24),
 
               // Google Button
-              SocialButton(
-                icon: FontAwesomeIcons.google,
-                text: 'Continue with Google',
-              ),
-              const SizedBox(height: 16),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  showAccountButton(
+                    icon: FontAwesomeIcons.google,
+                    text: "Google",
+                  ),
+                  const SizedBox(width: 30),
 
-              // Twitter Button
-              SocialButton(
-                icon: FontAwesomeIcons.xTwitter,
-                text: 'Continue with Twitter',
-              ),
-              const SizedBox(height: 16),
-
-              // Facebook Button
-              SocialButton(
-                icon: FontAwesomeIcons.facebook,
-                text: 'Continue with Facebook',
+                  // Facebook Button
+                  showAccountButton(
+                    icon: FontAwesomeIcons.facebook,
+                    text: "Facebook",
+                  ),
+                  const SizedBox(width: 30),
+                  // Twitter Button
+                  showAccountButton(
+                    icon: FontAwesomeIcons.xTwitter,
+                    text: "Twitter",
+                  ),
+                ],
               ),
               const SizedBox(height: 24),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class SocialButton extends StatelessWidget {
-  final IconData icon;
-  final String text;
-
-  const SocialButton({
-    super.key,
-    required this.icon,
-    required this.text,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: OutlinedButton.icon(
-        onPressed: () {},
-        icon: FaIcon(icon, color: Colors.black),
-        label: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 14.0),
-          child: Text(
-            text,
-            style: const TextStyle(color: Colors.black),
-          ),
-        ),
-        style: OutlinedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12.0),
-          ),
-          side: const BorderSide(color: Colors.grey),
         ),
       ),
     );

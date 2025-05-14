@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-Align textFieldLabel({required String label}) {
+Widget textFieldLabel({required String label}) {
   return Align(
     alignment: Alignment.topLeft,
     child: Padding(
@@ -16,7 +17,7 @@ Align textFieldLabel({required String label}) {
   );
 }
 
-TextFormField textField(
+Widget textField(
     {required String hintText,
     required IconData prefixIcon,
     IconButton? suffixIcon}) {
@@ -35,7 +36,7 @@ TextFormField textField(
   );
 }
 
-SizedBox elevatedButtons({
+Widget elevatedButtons({
   required String text,
   required VoidCallback onPressed,
 }) {
@@ -56,5 +57,32 @@ SizedBox elevatedButtons({
         style: const TextStyle(fontSize: 16),
       ),
     ),
+  );
+}
+
+Widget showAccountButton({required IconData icon, required String text}) {
+  return Column(
+    children: [
+      IconButton(
+        onPressed: () {},
+        icon: FaIcon(
+          icon,
+          color: Colors.black,
+          size: 30,
+        ),
+        style: OutlinedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+          side: const BorderSide(color: Colors.grey),
+        ),
+      ),
+      Text(
+        text,
+        style: TextStyle(
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+    ],
   );
 }

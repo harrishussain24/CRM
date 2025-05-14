@@ -65,7 +65,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Already have an account? ",
+                    const Text("Already have an account...? ",
                         style: TextStyle(color: Colors.grey)),
                     TextButton(
                       onPressed: () {
@@ -89,7 +89,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                     const Text(
-                      'or',
+                      'or continue with',
                       style: TextStyle(color: Colors.black54),
                     ),
                     const Expanded(
@@ -104,25 +104,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                 const SizedBox(height: 24),
 
-                // Google Button
-                SocialButton(
-                  icon: FontAwesomeIcons.google,
-                  text: 'Continue with Google',
-                ),
-                const SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    showAccountButton(
+                      icon: FontAwesomeIcons.google,
+                      text: "Google",
+                    ),
+                    const SizedBox(width: 30),
 
-                // Twitter Button
-                SocialButton(
-                  icon: FontAwesomeIcons.xTwitter,
-                  text: 'Continue with Twitter',
-                ),
-                const SizedBox(height: 16),
+                    // Facebook Button
+                    showAccountButton(
+                      icon: FontAwesomeIcons.facebook,
+                      text: "Facebook",
+                    ),
+                    const SizedBox(width: 30),
 
-                // Facebook Button
-                SocialButton(
-                  icon: FontAwesomeIcons.facebook,
-                  text: 'Continue with Facebook',
+                    // Twitter Button
+                    showAccountButton(
+                      icon: FontAwesomeIcons.xTwitter,
+                      text: "Twitter",
+                    ),
+                  ],
                 ),
+
                 const SizedBox(height: 24),
               ],
             ),
