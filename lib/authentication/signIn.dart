@@ -3,6 +3,8 @@ import 'package:crm/authentication/signUp.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'constants.dart';
+
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
 
@@ -31,66 +33,24 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
               const SizedBox(height: 32),
               // Email
-              Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 5.0,
-                    vertical: 3,
-                  ),
-                  child: const Text(
-                    'Email',
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Enter your email',
-                  prefixIcon: const Icon(Icons.email),
-                  filled: true,
-                  fillColor: Colors.grey.shade200,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.0),
-                    borderSide: BorderSide.none,
-                  ),
-                ),
+              textFieldLabel(label: 'Email'),
+              textField(
+                hintText: 'Enter your email',
+                prefixIcon: Icons.email,
               ),
               const SizedBox(height: 12),
               // Password
-              Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 5.0,
-                    vertical: 3,
-                  ),
-                  child: const Text(
-                    'Password',
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-              TextFormField(
-                obscureText: obscure,
-                decoration: InputDecoration(
-                  hintText: 'Enter password',
-                  prefixIcon: const Icon(Icons.lock),
-                  suffixIcon: IconButton(
-                    icon:
-                        Icon(obscure ? Icons.visibility : Icons.visibility_off),
-                    onPressed: () {
-                      setState(() {
-                        obscure = !obscure;
-                      });
-                    },
-                  ),
-                  filled: true,
-                  fillColor: Colors.grey.shade200,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.0),
-                    borderSide: BorderSide.none,
-                  ),
+              textFieldLabel(label: 'Password'),
+              textField(
+                hintText: 'Enter password',
+                prefixIcon: Icons.lock,
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      obscure = !obscure;
+                    });
+                  },
+                  icon: Icon(obscure ? Icons.visibility : Icons.visibility_off),
                 ),
               ),
               Row(
@@ -111,25 +71,8 @@ class _SignInScreenState extends State<SignInScreen> {
                 ],
               ),
               const SizedBox(height: 24),
-              // Create Account Button
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                    backgroundColor: const Color(0xFF3CB0FF),
-                    foregroundColor: Colors.white,
-                  ),
-                  child: const Text(
-                    'Sign In',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ),
-              ),
+              // Sign In Button
+              elevatedButtons(text: 'Sign In', onPressed: () {}),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
