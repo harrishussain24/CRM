@@ -1,4 +1,5 @@
 import 'package:crm/authentication/signIn.dart';
+import 'package:crm/dashboard/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xFF3CB0FF),
         scaffoldBackgroundColor: Color(0xFFF2F2F2),
       ),
-      home: const SignInScreen(),
+      home: const HomeScreen(),
     );
   }
 }
